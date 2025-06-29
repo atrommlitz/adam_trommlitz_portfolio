@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Product Manager",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/adam_photo.jpg",
   email: "adamtrommlitz3@gmail.com",
   location: "America/Denver", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: [], // optional: Leave the array empty if you don't want to display languages
@@ -42,6 +42,11 @@ const social = [
     icon: "email",
     link: `mailto:${person.email}`,
   },
+  {
+    name: "Resume",
+    icon: "resume",
+    link: "/Adam_Resume.pdf",
+  },
 ];
 
 const home = {
@@ -50,7 +55,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: "Building bridges between design and code",
+  headline: "Doing Cool Stuff and Having Fun",
   featured: {
     display: true,
     title: (
@@ -91,10 +96,12 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for
-        transforming complex challenges into simple, elegant design solutions.
-        Her work spans digital interfaces, interactive experiences, and the
-        convergence of design and technology.
+        Growing up, I've always enjoyed solving complex problems. Whether
+        through navigating intricate video game challenges, strategizing in
+        chess, playing board games with friends, or working through traditional
+        puzzles, I developed an understanding of breaking down complex scenarios
+        and finding solutions. Now I'm working as a Product Management Intern @
+        Lucid Software helping teams to see and build the future!
       </>
     ),
   },
@@ -103,41 +110,39 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Lucid Software",
+        timeframe: "May 2025 - Present",
+        role: "Product Management Intern",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20%
-            increase in user engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows,
-            enabling designers to iterate 50% faster.
+            Currently working tirelessly to help teams see and build the future!
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Intermountain Health",
+        timeframe: "May 2024 - May 2025",
+        role: "Data Analyst Intern",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple
-            platforms, improving design consistency by 40%.
+            Collaborated with multiple stakeholders to effectively build and
+            maintain key dashboards estimated at $800,000 and quickly address
+            unstructured problems, saving them 60 minutes daily.
           </>,
           <>
-            Led a cross-functional team to launch a new product line,
-            contributing to a 15% increase in overall company revenue.
+            Secured 3rd place in the Enterprise Tableau Data Visualization
+            Competition with a team of three, presenting to an audience of over
+            100 people including analysts, directors, and managers using
+            storytelling with data principles.
           </>,
         ],
         images: [],
@@ -146,15 +151,16 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Brigham Young University - Marriott School of Business",
+        description: (
+          <>
+            Masters of Information Systems - Emphasis in Business Intelligence
+            and Data Analytics
+          </>
+        ),
       },
     ],
   },
@@ -163,24 +169,24 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "SQL",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Advanced SQL through my hands on training in school and work</>
         ),
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-02.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
+          // {
+          //   src: "/images/projects/project-01/cover-03.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
@@ -190,12 +196,12 @@ const about = {
         ),
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-04.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
     ],
