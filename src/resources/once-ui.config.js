@@ -14,7 +14,7 @@ const routes = {
 const display = {
   location: true,
   time: true,
-  themeSwitcher: true
+  themeSwitcher: true,
 };
 
 // Enable password protection on selected routes
@@ -69,7 +69,7 @@ const style = {
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
-  scaling: "100" // 90 | 95 | 100 | 105 | 110
+  scaling: "100", // 90 | 95 | 100 | 105 | 110
 };
 
 const dataStyle = {
@@ -82,7 +82,7 @@ const dataStyle = {
   tick: {
     fill: "var(--neutral-on-background-weak)",
     fontSize: 11,
-    line: false
+    line: false,
   },
 };
 
@@ -127,49 +127,49 @@ const effects = {
   },
 };
 
-const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
-  effects: {
-    mask: {
-      cursor: true,
-      x: 50,
-      y: 0,
-      radius: 100,
-    },
-    gradient: {
-      display: true,
-      opacity: 90,
-      x: 50,
-      y: 0,
-      width: 50,
-      height: 50,
-      tilt: 0,
-      colorStart: "accent-background-strong",
-      colorEnd: "static-transparent",
-    },
-    dots: {
-      display: true,
-      opacity: 20,
-      size: "2",
-      color: "brand-on-background-weak",
-    },
-    grid: {
-      display: false,
-      opacity: 100,
-      color: "neutral-alpha-medium",
-      width: "0.25rem",
-      height: "0.25rem",
-    },
-    lines: {
-      display: false,
-      opacity: 100,
-      color: "neutral-alpha-medium",
-      size: "16",
-      thickness: 1,
-      angle: 90,
-    },
-  }
-};
+// const mailchimp = {
+//   action: "https://url/subscribe/post?parameters",
+//   effects: {
+//     mask: {
+//       cursor: true,
+//       x: 50,
+//       y: 0,
+//       radius: 100,
+//     },
+//     gradient: {
+//       display: true,
+//       opacity: 90,
+//       x: 50,
+//       y: 0,
+//       width: 50,
+//       height: 50,
+//       tilt: 0,
+//       colorStart: "accent-background-strong",
+//       colorEnd: "static-transparent",
+//     },
+//     dots: {
+//       display: true,
+//       opacity: 20,
+//       size: "2",
+//       color: "brand-on-background-weak",
+//     },
+//     grid: {
+//       display: false,
+//       opacity: 100,
+//       color: "neutral-alpha-medium",
+//       width: "0.25rem",
+//       height: "0.25rem",
+//     },
+//     lines: {
+//       display: false,
+//       opacity: 100,
+//       color: "neutral-alpha-medium",
+//       size: "16",
+//       thickness: 1,
+//       angle: 90,
+//     },
+//   }
+// };
 
 // default schema data
 const schema = {
@@ -187,4 +187,16 @@ const sameAs = {
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 
-export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
+export {
+  display,
+  // mailchimp,
+  routes,
+  protectedRoutes,
+  baseURL,
+  fonts,
+  style,
+  schema,
+  sameAs,
+  effects,
+  dataStyle,
+};
