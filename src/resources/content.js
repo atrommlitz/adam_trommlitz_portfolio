@@ -190,9 +190,20 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
+        title: "Tableau",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Worked extensivly on building dashboards for Intermountain Health.
+            Check out some projects on{" "}
+            <a
+              href="https://public.tableau.com/app/profile/adam.trommlitz/vizzes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              public.tableau.com/app/profile/adam.trommlitz/vizzes
+            </a>
+          </>
         ),
         // optional: leave the array empty if you don't want to display images
         images: [
