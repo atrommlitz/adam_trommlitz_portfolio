@@ -14,7 +14,7 @@ import {
   Schema,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Projects } from "@/components/work/Projects";
+import { HomeProjectCard } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 
 export default function Home() {
@@ -112,7 +112,18 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <HomeProjectCard
+          images={[
+            "/images/projects/project-01/cover-01.jpg",
+            "/images/projects/project-01/cover-02.jpg",
+            "/images/projects/project-01/cover-03.jpg",
+            "/images/projects/project-01/cover-04.jpg",
+            "/images/projects/project-01/image-01.jpg",
+            "/images/projects/project-01/image-02.jpg",
+            "/images/projects/project-01/image-03.jpg",
+          ]}
+          title="Project Showcase"
+        />
       </RevealFx>
       {routes["/blog"] && (
         <Flex fillWidth gap="24">

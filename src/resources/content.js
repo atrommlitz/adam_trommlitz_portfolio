@@ -89,8 +89,9 @@ const about = {
         through navigating intricate video game challenges, strategizing in
         chess, playing board games with friends, or working through traditional
         puzzles, I developed an understanding of breaking down complex scenarios
-        and finding solutions. Now I'm working as a Product Management Intern @
-        Lucid Software helping teams to see and build the future!
+        and finding solutions. Now I'm using those skills as an Associate
+        Product Manager @ Lucid Software helping teams to see and build the
+        future!
       </>
     ),
   },
@@ -101,10 +102,22 @@ const about = {
       {
         company: "Lucid Software",
         timeframe: "May 2025 - Present",
-        role: "Product Management Intern",
+        role: "Associate Product Manager",
         achievements: [
           <>
-            Currently working tirelessly to help teams see and build the future!
+            Partnered with cross-functional teams to support product roadmap
+            development, conduct market research, and analyze customer feedback
+            to drive data-informed decisions for product improvements.
+          </>,
+          <>
+            Built and presented a feature proposal to improve the canvas tagging
+            experience based on user research using NotebookLM, competitor
+            analysis, and customer journey maps, driving the product roadmap for
+            Q3 2025.
+          </>,
+          <>
+            Led team to 1st place in a company-wide hackathon, outperforming 67
+            teams, competing against VPs, directors, and managers.
           </>,
         ],
         images: [
@@ -158,9 +171,12 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "SQL",
+        title: "Languages",
         description: (
-          <>Advanced SQL through my hands on training in school and work</>
+          <>
+            SQL (Advanced), Python (Proficient), HTML/CSS (Proficient), R
+            (Proficient)
+          </>
         ),
         // optional: leave the array empty if you don't want to display images
         images: [
@@ -179,19 +195,21 @@ const about = {
         ],
       },
       {
-        title: "Tableau",
+        title: "Systems/Applications",
         description: (
           <>
-            Worked extensivly on building dashboards for Intermountain Health.
-            Check out some projects on{" "}
+            MySQL, PostgreSQL, Pandas, Sklearn, Informatica, AWS (EC2, Elastic
+            Beanstalk, RDS, S3), Azure (SQL Database, Key Vault, Compute),
+            Linux, Databricks,{" "}
             <a
               href="https://public.tableau.com/app/profile/adam.trommlitz/vizzes"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              public.tableau.com/app/profile/adam.trommlitz/vizzes
+              Tableau
             </a>
+            , Docker, Snowflake, DBT, Airflow, MongoDB{" "}
           </>
         ),
         // optional: leave the array empty if you don't want to display images
