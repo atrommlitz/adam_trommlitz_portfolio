@@ -13,17 +13,6 @@ const person = {
   languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
-// const newsletter = {
-//   display: true,
-//   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-//   description: (
-//     <>
-//       I occasionally write about design, technology, and share thoughts on the
-//       intersection of creativity and engineering.
-//     </>
-//   ),
-// };
-
 const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
@@ -57,7 +46,7 @@ const home = {
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: "Doing Cool Stuff and Having Fun",
   featured: {
-    display: true,
+    display: false,
     title: (
       <>
         Recent project: <strong className="ml-4">Once UI</strong>
@@ -222,7 +211,7 @@ const about = {
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing About My Life and My Learnings",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
