@@ -49,6 +49,13 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    {
+      title: about.volunteer.title,
+      display: about.volunteer.display,
+      items: about.volunteer.experiences.map(
+        (experience) => experience.organization
+      ),
+    },
   ];
   return (
     <Column maxWidth="m">
@@ -318,6 +325,94 @@ export default function About() {
                     {skill.images && skill.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" gap="12" wrap>
                         {skill.images.map((image, index) => (
+                          <Flex
+                            key={index}
+                            border="neutral-medium"
+                            radius="m"
+                            //@ts-ignore
+                            minWidth={image.width}
+                            //@ts-ignore
+                            height={image.height}
+                          >
+                            <Media
+                              enlarge
+                              radius="m"
+                              //@ts-ignore
+                              sizes={image.width.toString()}
+                              //@ts-ignore
+                              alt={image.alt}
+                              //@ts-ignore
+                              src={image.src}
+                            />
+                          </Flex>
+                        ))}
+                      </Flex>
+                    )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.volunteer.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.volunteer.title}
+                variant="display-strong-s"
+                marginTop="xl"
+                marginBottom="m"
+              >
+                {about.volunteer.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.volunteer.experiences.map((experience, index) => (
+                  <Column
+                    key={`${experience.organization}-${experience.role}-${index}`}
+                    fillWidth
+                    gap="4"
+                  >
+                    <Flex
+                      fillWidth
+                      horizontal="space-between"
+                      vertical="end"
+                      marginBottom="4"
+                    >
+                      <Text
+                        id={experience.organization}
+                        variant="heading-strong-l"
+                      >
+                        {experience.organization}
+                      </Text>
+                      <Text
+                        variant="heading-default-xs"
+                        onBackground="neutral-weak"
+                      >
+                        {experience.timeframe}
+                      </Text>
+                    </Flex>
+                    <Text
+                      variant="body-default-s"
+                      onBackground="brand-weak"
+                      marginBottom="m"
+                    >
+                      {experience.role}
+                    </Text>
+                    <Column as="ul" gap="16">
+                      {experience.achievements.map((achievement, index) => (
+                        <Text
+                          key={index}
+                          as="li"
+                          variant="body-default-s"
+                          onBackground="neutral-weak"
+                        >
+                          {achievement}
+                        </Text>
+                      ))}
+                    </Column>
+                    {experience.images && experience.images.length > 0 && (
+                      <Flex fillWidth paddingTop="m" gap="12" wrap>
+                        {experience.images.map((image, index) => (
                           <Flex
                             key={index}
                             border="neutral-medium"

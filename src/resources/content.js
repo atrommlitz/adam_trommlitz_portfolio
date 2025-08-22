@@ -149,6 +149,28 @@ const about = {
         ],
         images: [],
       },
+      {
+        company: "Brigham Young University",
+        timeframe: "July 2021 - April 2024",
+        role: "Teacher and Training Supervisor",
+        achievements: [
+          <>
+            Developed training meetings and instructional tools to build
+            teaching, conflict resolution, and time management skills, leading
+            to a 10% improvement in student-teacher evaluations while managing a
+            team of 7.
+          </>,
+          <>
+            Implemented a system to organize students in conferencing calls,
+            resulting in a 50% reduction in student wait time.
+          </>,
+          <>
+            Achieved an average survey rating of 4.9/5.0 based on communication,
+            leadership, and employee satisfaction.
+          </>,
+        ],
+        images: [],
+      },
     ],
   },
   studies: {
@@ -217,6 +239,75 @@ const about = {
           // {
           //   src: "/images/projects/project-01/cover-04.jpg",
           //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
+        ],
+      },
+      {
+        title: "Certifications",
+        description: (
+          <>Professional Scrum Master™ I (PSM I), Databricks Data Analyst</>
+        ),
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          // {
+          //   src: "/images/projects/project-01/cover-04.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
+        ],
+      },
+    ],
+  },
+  volunteer: {
+    display: true, // set to false to hide this section
+    title: "Volunteering",
+    experiences: [
+      {
+        organization: "BYU Association of Information Systems",
+        timeframe: "November 2024 - Present",
+        role: "VP of Corporate Sponsorship",
+        achievements: [
+          <>
+            Coordinate with company sponsors including some of the largest
+            consulting firms to help provide activities, information sessions,
+            and networking opportunities for information systems students.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
+        ],
+      },
+      {
+        organization: "BYUSA - Student Leadership Center",
+        timeframe: "May 2024 - May 2025",
+        role: "Team Lead",
+        achievements: [
+          <>
+            Researched and spearheaded a campus-wide initiative to improve
+            campus engagement, leading a team of eight to develop and implement
+            strategic enhancements, with results presented to the university
+            president for consideration.
+          </>,
+          <>
+            Reviewed and analyzed new and existing campus policies to identify
+            and raise critical concerns and awareness, effectively advocating on
+            behalf of the student body.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
           //   width: 16,
           //   height: 9,
           // },
