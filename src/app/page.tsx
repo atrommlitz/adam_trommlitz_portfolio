@@ -114,15 +114,14 @@ export default function Home() {
       <RevealFx translateY="16" delay={0.6}>
         <HomeProjectCard
           images={[
-            "/images/projects/project-01/cover-01.jpg",
-            "/images/projects/project-01/cover-02.jpg",
-            "/images/projects/project-01/cover-03.jpg",
-            "/images/projects/project-01/cover-04.jpg",
-            "/images/projects/project-01/image-01.jpg",
-            "/images/projects/project-01/image-02.jpg",
-            "/images/projects/project-01/image-03.jpg",
+            "/images/projects/project-01/Mountains.jpg",
+            "/images/projects/project-01/Family_Picture.JPG",
+            "/images/projects/project-01/Wetsuit.jpg",
+            "/images/projects/project-01/Canyon.JPG",
+            "/images/projects/project-01/Kings_Peak.jpg",
+            "/images/projects/project-01/Waterfall.JPG",
           ]}
-          title="Project Showcase"
+          title="Personal Photos"
         />
       </RevealFx>
       {routes["/blog"] && (
