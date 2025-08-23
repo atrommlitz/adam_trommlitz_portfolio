@@ -340,47 +340,101 @@ const gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  // Personal photos from various adventures and experiences
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_0166.JPG",
+      alt: "Scenic landscape photography",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_0177.JPG",
+      alt: "Outdoor adventure photography",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_1119.JPG",
+      alt: "Nature photography",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_3745.jpg",
+      alt: "Landscape photography",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_1107.JPG",
+      alt: "Outdoor landscape photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_1097.JPG",
+      alt: "Nature scene photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_0886.JPG",
+      alt: "Scenic view photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_0865.JPG",
+      alt: "Landscape vista photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_0678.JPG",
+      alt: "Outdoor scene photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_0576.JPG",
+      alt: "Nature landscape photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_0541.JPG",
+      alt: "Scenic outdoor photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_0172.JPG",
+      alt: "Portrait photography",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_0290.JPG",
+      alt: "Urban photography",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_0317.JPG",
+      alt: "Street photography",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/IMG_4265.JPG",
+      alt: "Cityscape photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/IMG_5304.JPG",
+      alt: "Architecture photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/IMG_5306.JPG",
+      alt: "Urban exploration photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/IMG_4045.jpg",
+      alt: "Portrait photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/IMG_0682.jpg",
+      alt: "Portrait photography",
       orientation: "vertical",
     },
   ],
