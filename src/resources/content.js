@@ -437,6 +437,16 @@ const gallery = {
       alt: "Portrait photography",
       orientation: "vertical",
     },
+    {
+      src: "/images/gallery/IMG_8582.JPG",
+      alt: "Portrait photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/IMG_1246.jpg",
+      alt: "Landscape photography",
+      orientation: "horizontal",
+    },
   ],
 };
 
