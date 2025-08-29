@@ -49,10 +49,10 @@ const home = {
     display: false,
     title: (
       <>
-        Recent project: <strong className="ml-4">Once UI</strong>
+        Recent project: <strong className="ml-4">Canvas Tags</strong>
       </>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/canvas-tags",
   },
   subline: (
     <>
@@ -118,6 +118,27 @@ const about = {
           <>
             Led team to 1st place in a company-wide hackathon, outperforming 67
             teams, competing against VPs, directors, and managers.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
+        ],
+      },
+      {
+        company: "Sandbox",
+        timeframe: "April 2025 - Present",
+        role: "Product Manager",
+        achievements: [
+          <>
+            Working with two engineers to develop and launch a startup while
+            leading product strategy, user research, and web development using
+            AI tools as part of a year-long venture-building experience.
           </>,
         ],
         images: [

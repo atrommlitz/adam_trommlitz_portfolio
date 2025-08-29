@@ -2,7 +2,6 @@
 
 import {
   AvatarGroup,
-  Carousel,
   Column,
   Flex,
   Heading,
@@ -32,13 +31,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
+      {images.length > 0 && (
+        <div style={{ width: "100%", overflow: "hidden", borderRadius: "8px" }}>
+          <img
+            src={images[0]}
+            alt={title}
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+      )}
       <Flex fillWidth paddingX="s" paddingTop="12" paddingBottom="24" gap="l">
         {title && (
           <Flex flex={5}>
