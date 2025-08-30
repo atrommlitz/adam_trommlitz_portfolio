@@ -10,6 +10,8 @@ export {
   gallery,
 } from "./content";
 
+export { projectData } from "./projectData";
+
 export {
   display,
   //mailchimp,

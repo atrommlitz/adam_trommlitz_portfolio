@@ -225,3 +225,132 @@ export function CustomMDX(props: CustomMDXProps) {
     />
   );
 }
+
+// Blog-specific MDX component that shows ONLY text and headings
+export function BlogMDX(props: CustomMDXProps) {
+  // Extract only text content from the MDX source
+  const textContent = React.useMemo(() => {
+    if (!props.source) return "";
+
+    // Convert to string if it's an object
+    let sourceString =
+      typeof props.source === "string"
+        ? props.source
+        : JSON.stringify(props.source);
+
+    // Check if this is the index post by looking for specific content
+    const isIndexPost =
+      sourceString.includes("Junior Year - 1st Semester") &&
+      sourceString.includes("Junior Year - 2nd Semester");
+
+    if (isIndexPost) {
+      // For the index post, preserve images but remove links
+      sourceString = sourceString.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
+      // Clean up extra whitespace
+      sourceString = sourceString.replace(/\n\s*\n/g, "\n\n");
+      sourceString = sourceString.trim();
+
+      return sourceString;
+    }
+
+    // Remove ALL markdown images completely - more aggressive pattern
+    sourceString = sourceString.replace(/!\[.*?\]\([^)]*\)/g, "");
+
+    // Remove ALL markdown images with spaces in alt text
+    sourceString = sourceString.replace(/!\[[^\]]*\]\([^)]*\)/g, "");
+
+    // Remove ALL HTML img tags
+    sourceString = sourceString.replace(/<img[^>]*>/gi, "");
+
+    // Remove ALL picture tags and their content
+    sourceString = sourceString.replace(
+      /<picture[^>]*>[\s\S]*?<\/picture>/gi,
+      ""
+    );
+
+    // Remove ALL source tags
+    sourceString = sourceString.replace(/<source[^>]*>/gi, "");
+
+    // Remove ALL figure tags and their content
+    sourceString = sourceString.replace(
+      /<figure[^>]*>[\s\S]*?<\/figure>/gi,
+      ""
+    );
+
+    // Remove ALL figcaption tags
+    sourceString = sourceString.replace(
+      /<figcaption[^>]*>[\s\S]*?<\/figcaption>/gi,
+      ""
+    );
+
+    // Remove ALL markdown links, keeping only the text
+    sourceString = sourceString.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
+    // Remove ALL HTML tags except basic formatting
+    sourceString = sourceString.replace(/<[^>]*>/gi, "");
+
+    // Remove any remaining image references
+    sourceString = sourceString.replace(/\/images\/[^\s\n]*/g, "");
+
+    // Remove any remaining image file extensions
+    sourceString = sourceString.replace(
+      /\.(jpg|jpeg|png|gif|webp|svg|ico)\b/gi,
+      ""
+    );
+
+    // Clean up extra whitespace
+    sourceString = sourceString.replace(/\n\s*\n/g, "\n\n");
+    sourceString = sourceString.trim();
+
+    return sourceString;
+  }, [props.source]);
+
+  // Split content into lines and render as simple text
+  const lines = textContent.split("\n");
+
+  return (
+    <div className="blog-content">
+      {lines.map((line, index) => {
+        if (!line.trim()) return <br key={index} />;
+
+        // Check if it's a heading
+        if (line.startsWith("#")) {
+          const match = line.match(/^#+/);
+          if (!match) return <p key={index}>{line}</p>;
+          const level = match[0].length;
+          const text = line.replace(/^#+\s*/, "");
+          const Tag = `h${Math.min(level, 6)}` as keyof JSX.IntrinsicElements;
+
+          return (
+            <Tag
+              key={index}
+              style={{
+                fontSize:
+                  level === 1 ? "2rem" : level === 2 ? "1.5rem" : "1.25rem",
+                fontWeight: "bold",
+                marginTop: "1rem",
+                marginBottom: "0.5rem",
+              }}
+            >
+              {text}
+            </Tag>
+          );
+        }
+
+        // Regular paragraph
+        return (
+          <p
+            key={index}
+            style={{
+              marginBottom: "1rem",
+              lineHeight: "1.6",
+            }}
+          >
+            {line}
+          </p>
+        );
+      })}
+    </div>
+  );
+}

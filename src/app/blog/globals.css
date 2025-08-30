@@ -1,0 +1,32 @@
+/* Hide images and links in blog posts */
+.blog-post img,
+.blog-post picture,
+.blog-post source,
+.blog-post figure,
+.blog-post figcaption,
+.blog-post [data-component="Media"],
+.blog-post .image,
+.blog-post .thumbnail {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+.blog-post a,
+.blog-post button,
+.blog-post [data-component="SmartLink"],
+.blog-post [data-component="Button"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.blog-post a {
+  color: inherit !important;
+  text-decoration: none !important;
+  pointer-events: none !important;
+}

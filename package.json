@@ -11,7 +11,6 @@
   "dependencies": {
     "@babel/runtime": "^7.28.3",
     "@mdx-js/loader": "^3.1.0",
-    "@next/mdx": "^15.3.1",
     "@once-ui-system/core": "1.2.4",
     "classnames": "^2.5.1",
     "cookie": "^1.0.2",
@@ -19,6 +18,9 @@
     "esprima": "^4.0.1",
     "gray-matter": "^4.0.3",
     "mdast-util-to-hast": "^12.3.0",
+    "micromark": "^3.2.0",
+    "micromark-core-commonmark": "^2.0.3",
+    "micromark-extension-gfm": "^2.0.3",
     "next": "^15.3.1",
     "next-mdx-remote": "^5.0.0",
     "react": "19.0.0",

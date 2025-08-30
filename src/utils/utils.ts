@@ -20,7 +20,7 @@ type Metadata = {
   link?: string;
 };
 
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 
 function getMDXFiles(dir: string) {
   if (!fs.existsSync(dir)) {
@@ -31,12 +31,43 @@ function getMDXFiles(dir: string) {
 }
 
 function readMDXFile(filePath: string) {
-    if (!fs.existsSync(filePath)) {
-        notFound();
-    }
+  if (!fs.existsSync(filePath)) {
+    notFound();
+  }
 
   const rawContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(rawContent);
+
+  // Get the filename to check if it's the index post
+  const fileName = path.basename(filePath, path.extname(filePath));
+
+  // Filter out images and links from the content for blog posts
+  let filteredContent = content;
+
+  // For the index post, preserve images but still filter links
+  if (fileName === "index") {
+    // Keep images but remove links
+    filteredContent = filteredContent.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+  } else {
+    // Remove ALL markdown images completely for other posts
+    filteredContent = filteredContent.replace(/!\[.*?\]\([^)]*\)/g, "");
+
+    // Remove ALL markdown links, keeping only the text
+    filteredContent = filteredContent.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
+    // Remove any remaining image references
+    filteredContent = filteredContent.replace(/\/images\/[^\s\n]*/g, "");
+
+    // Remove any remaining image file extensions
+    filteredContent = filteredContent.replace(
+      /\.(jpg|jpeg|png|gif|webp|svg|ico)\b/gi,
+      ""
+    );
+  }
+
+  // Clean up extra whitespace
+  filteredContent = filteredContent.replace(/\n\s*\n/g, "\n\n");
+  filteredContent = filteredContent.trim();
 
   const metadata: Metadata = {
     title: data.title || "",
@@ -49,7 +80,7 @@ function readMDXFile(filePath: string) {
     link: data.link || "",
   };
 
-  return { metadata, content };
+  return { metadata, content: filteredContent };
 }
 
 function getMDXData(dir: string) {

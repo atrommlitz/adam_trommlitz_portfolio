@@ -11,7 +11,7 @@ import {
   Media,
   Text,
 } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { baseURL, about, person, work, projectData } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
@@ -67,7 +67,7 @@ export default async function Project({
   }
 
   const avatars =
-    post.metadata.team?.map((person) => ({
+    projectData[slugPath]?.team?.map((person) => ({
       src: person.avatar,
     })) || [];
 
@@ -104,12 +104,10 @@ export default async function Project({
         </Button>
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>
       </Column>
-      {post.metadata.images.length > 0 && (
-        <Media priority radius="m" alt="image" src={post.metadata.images[0]} />
-      )}
+
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <Flex gap="12" marginBottom="24" vertical="center">
-          {post.metadata.team && (
+          {projectData[slugPath]?.team && (
             <AvatarGroup reverse avatars={avatars} size="m" />
           )}
           <Text variant="body-default-s" onBackground="neutral-weak">

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { CustomMDX, ScrollToHash } from "@/components";
+import { BlogMDX, CustomMDX, ScrollToHash } from "@/components";
 import {
   Meta,
   Schema,
@@ -19,7 +19,11 @@ import TableOfContents from "@/components/blog/TableOfContents";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "blog", "posts"]);
-  return posts.map((post) => ({
+  // Only generate routes for allowed posts
+  const allowedPosts = posts.filter(
+    (post) => post.slug === "about_me" || post.slug === "index"
+  );
+  return allowedPosts.map((post) => ({
     slug: post.slug,
   }));
 }
@@ -63,7 +67,8 @@ export default async function Blog({
     (post) => post.slug === slugPath
   );
 
-  if (!post) {
+  // Check if post exists and is allowed
+  if (!post || (post.slug !== "about_me" && post.slug !== "index")) {
     notFound();
   }
 
@@ -115,8 +120,12 @@ export default async function Blog({
                 formatDate(post.metadata.publishedAt)}
             </Text>
           </Row>
-          <Column as="article" fillWidth>
-            <CustomMDX source={post.content} />
+          <Column as="article" fillWidth className="blog-post">
+            {post.slug === "index" ? (
+              <CustomMDX source={post.content} />
+            ) : (
+              <BlogMDX source={post.content} />
+            )}
           </Column>
           <ScrollToHash />
         </Column>

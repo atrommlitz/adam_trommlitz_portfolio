@@ -9,7 +9,7 @@ import {
   Tag,
   Text,
 } from "@once-ui-system/core";
-import styles from "./Posts.module.scss";
+import styles from "./Blog.module.scss";
 import { formatDate } from "@/utils/formatDate";
 
 interface PostProps {
