@@ -1,0 +1,65 @@
+---
+title: "IS Talent Portfolio"
+publishedAt: "2025-12-23"
+summary: "Worked with the IS Career Advisement Center to Build an AI-powered website in AWS to streamline their collection of resumes and coordination with recruiters"
+link: "https://www.canva.com/design/DAG7Q4MjltQ/hqrMhMbK1l0NEGzYoFKpkg/edit"
+---
+
+<a
+  href="https://www.loom.com/share/d88c808e0e554be2ab977b2a73752b4a"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: '#2563eb', textDecoration: 'underline' }}
+>
+  Watch Project Video
+</a>
+
+## Overview
+
+The **BYU IS Talent Portfolio** is a cloud-native, AI-powered platform designed to revolutionize how recruiters interact with student talent. By leveraging **Retrieval-Augmented Generation (RAG)** and semantic search, the platform moves beyond simple keyword matching, allowing recruiters to find the perfect candidate by simply pasting a job description.
+
+---
+
+## Key Technical Pillars
+
+### AI Infrastructure & RAG Pipeline
+
+- **Vector Embeddings:** Designed a RAG workflow using **Amazon Bedrock** (Titan or Claude models) to convert unstructured resume text into high-dimensional vectors.
+- **Vector Storage:** Implemented **Amazon OpenSearch Serverless** (or Aurora pgvector) to perform cosine-similarity searches between job descriptions and student profiles.
+- **Semantic Ranking:** Developed backend logic to rank candidates based on conceptual fit rather than just "exact word" matches.
+
+### Automated Document Processing
+
+- **Event-Driven Architecture:** Resume uploads to **Amazon S3** trigger **AWS Lambda** functions automatically.
+- **OCR & Extraction:** Integrated **Amazon Textract** to ingest PDF and DOCX files, extracting clean text for the embedding engine.
+- **Metadata Management:** Managed student records and application states using **Amazon DynamoDB**, ensuring high-speed access to non-vector data.
+
+### Secure Multi-Tenant Access
+
+- **Identity Management:** Configured **Amazon Cognito** for secure login, separating permissions for Students, Recruiters, and IS Advisors.
+- **Least-Privilege Security:** Authored granular **IAM Policies** to ensure recruiters cannot access administrative settings and students can only edit their own data.
+- **API Protection:** Secured the communication layer using **Amazon API Gateway** with JWT-based authorizers.
+
+---
+
+## Architecture at a Glance
+
+| Layer         | Service                 | Purpose                                 |
+| :------------ | :---------------------- | :-------------------------------------- |
+| **Frontend**  | React + S3 + CloudFront | Global, low-latency web hosting         |
+| **Compute**   | AWS Lambda              | Scalable, pay-per-use backend logic     |
+| **Database**  | DynamoDB                | Fast NoSQL storage for student metadata |
+| **AI/ML**     | Amazon Bedrock          | Managed LLMs for embeddings and chat    |
+| **Vector DB** | OpenSearch Serverless   | Storing and searching resume vectors    |
+
+---
+
+## Challenges and Learnings
+
+> **The Semantic Gap:** > One major challenge was ensuring that the AI understood that a student listing "Python" and "Data Analysis" was a strong match for a "Data Science Intern" role. By implementing **Vector Embeddings**, we successfully bridged this gap.
+
+We also tackled the complexities of **asynchronous processing**—ensuring the frontend provides real-time feedback to students while their resumes are being processed in the background by Lambda and Textract.
+
+## Outcome
+
+The platform provides a streamlined, "smart" recruitment experience. It reduces the time IS Advisors spend manually compiling resume books and increases the probability of students landing interviews by highlighting their relevant skills through AI-driven matching.
