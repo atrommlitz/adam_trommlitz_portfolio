@@ -1,0 +1,63 @@
+.hover {
+  border: 1px solid var(--static-transparent);
+
+  &:hover {
+    border: 1px solid var(--neutral-alpha-medium);
+  }
+}
+
+.image {
+  transition: var(--transition-micro-medium);
+  transform: scale(1);
+}
+
+// Additional styles to hide unwanted elements in blog posts
+:global(.blog-post) {
+  // Hide all types of images
+  img,
+  picture,
+  source,
+  figure,
+  figcaption,
+  [data-component="Media"],
+  .image,
+  .thumbnail {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  // Hide all types of links and buttons
+  a,
+  button,
+  [data-component="SmartLink"],
+  [data-component="Button"],
+  .link,
+  .button {
+    color: inherit !important;
+    text-decoration: none !important;
+    pointer-events: none !important;
+    cursor: default !important;
+
+    // Remove any link styling
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit !important;
+      text-decoration: none !important;
+      background: none !important;
+      outline: none !important;
+    }
+  }
+
+  // Hide any other interactive elements
+  [role="button"],
+  [tabindex],
+  [onclick] {
+    pointer-events: none !important;
+    cursor: default !important;
+  }
+}
