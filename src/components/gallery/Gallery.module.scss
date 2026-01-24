@@ -11,4 +11,16 @@
 
 .gridItem {
     margin-bottom: var(--static-space-16);
+    width: 100%;
+    border-radius: var(--radius-m);
+    overflow: hidden;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-m);
+    image-orientation: from-image;
+    object-fit: contain;
 }

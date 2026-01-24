@@ -16,10 +16,21 @@ import {
 import { home, about, person, baseURL, routes } from "@/resources";
 import { HomeProjectCard } from "@/components";
 import { Posts } from "@/components/blog/Posts";
+import { ImagePreloader } from "@/components/ImagePreloader";
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center">
+    <>
+      {/* Preload critical images for faster initial page load */}
+      <ImagePreloader
+        images={[
+          person.avatar,
+          "/images/projects/project-01/Mountains.jpg",
+          "/images/projects/project-01/Family_Picture.JPG",
+        ]}
+      />
+
+      <Column maxWidth="m" gap="xl" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -138,6 +149,7 @@ export default function Home() {
       )}
       {/* <Projects range={[2]} />
       {newsletter.display && <Mailchimp newsletter={newsletter} />} */}
-    </Column>
+      </Column>
+    </>
   );
 }

@@ -376,22 +376,22 @@ const gallery = {
     {
       src: "/images/gallery/IMG_1119.JPG",
       alt: "Nature photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_3745.jpg",
       alt: "Landscape photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_1107.JPG",
       alt: "Outdoor landscape photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_1097.JPG",
       alt: "Nature scene photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_0886.JPG",
@@ -401,22 +401,22 @@ const gallery = {
     {
       src: "/images/gallery/IMG_0865.JPG",
       alt: "Landscape vista photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_0678.JPG",
       alt: "Outdoor scene photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_0576.JPG",
       alt: "Nature landscape photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_0541.JPG",
       alt: "Scenic outdoor photography",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/IMG_0172.JPG",

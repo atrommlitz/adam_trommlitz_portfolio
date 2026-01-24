@@ -9,17 +9,6 @@ export interface ProjectData {
 }
 
 export const projectData: Record<string, ProjectData> = {
-  "is-talent-portfolio": {
-    images: ["/images/work/IS_Talent_Portfiolio.png"],
-    team: [
-      {
-        name: "Adam Trommlitz",
-        role: "Product Manager",
-        avatar: "/images/adam_photo.jpg",
-        linkedIn: "https://www.linkedin.com/in/adamtrommlitz/",
-      },
-    ],
-  },
   sandbox_hackathon: {
     images: ["/images/work/Promigo.png"],
     team: [
@@ -48,17 +37,6 @@ export const projectData: Record<string, ProjectData> = {
       {
         name: "Adam Trommlitz",
         role: "Product Manager",
-        avatar: "/images/adam_photo.jpg",
-        linkedIn: "https://www.linkedin.com/in/adamtrommlitz/",
-      },
-    ],
-  },
-  MTC: {
-    images: ["/images/work/MTC.jpeg"],
-    team: [
-      {
-        name: "Adam Trommlitz",
-        role: "Teacher and Training Supervisor",
         avatar: "/images/adam_photo.jpg",
         linkedIn: "https://www.linkedin.com/in/adamtrommlitz/",
       },

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { Carousel, Column } from "@once-ui-system/core";
 
 interface HomeProjectCardProps {
@@ -11,6 +12,14 @@ export const HomeProjectCard: React.FC<HomeProjectCardProps> = ({
   images = [],
   title,
 }) => {
+  // Preload first 3 images for faster transitions
+  useEffect(() => {
+    images.slice(0, 3).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [images]);
+
   return (
     <Column fillWidth gap="m">
       <div className="relative">
@@ -23,6 +32,7 @@ export const HomeProjectCard: React.FC<HomeProjectCardProps> = ({
         >
           <Carousel
             sizes="(max-width: 960px) 100vw, 960px"
+            revealedByDefault={true}
             items={images.map((image) => ({
               slide: image,
               alt: title,

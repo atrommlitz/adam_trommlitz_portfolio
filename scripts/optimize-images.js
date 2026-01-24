@@ -48,9 +48,18 @@ async function optimizeImage(imagePath) {
     const ext = path.extname(imagePath).toLowerCase();
     const originalSize = fs.statSync(imagePath).size;
     
+    // Read metadata first to check orientation
+    const inputMetadata = await sharp(imagePath).metadata();
+    const hasOrientation = inputMetadata.orientation && inputMetadata.orientation > 1;
+    
     let sharpInstance = sharp(imagePath);
     
-    // Get image metadata
+    // Auto-rotate based on EXIF orientation data
+    // This will physically rotate the image and remove the EXIF orientation tag
+    // Using rotate() without parameters auto-rotates based on EXIF
+    sharpInstance = sharpInstance.rotate();
+    
+    // Get image metadata after rotation
     const metadata = await sharpInstance.metadata();
     const { width, height } = metadata;
     
@@ -90,18 +99,22 @@ async function optimizeImage(imagePath) {
     // Write optimized image
     await sharpInstance.toFile(tempPath);
     
-    // Check if optimization actually reduced size
+    // Check if optimization actually reduced size OR if we rotated the image
     const newSize = fs.statSync(tempPath).size;
     
-    if (newSize < originalSize) {
+    // Always replace if we rotated the image (even if file size increased slightly)
+    if (newSize < originalSize || hasOrientation) {
       // Replace original with optimized version
       fs.renameSync(tempPath, imagePath);
-      const savings = ((originalSize - newSize) / originalSize * 100).toFixed(1);
+      const savings = newSize < originalSize 
+        ? ((originalSize - newSize) / originalSize * 100).toFixed(1)
+        : '0.0';
       return {
         success: true,
         originalSize,
         newSize,
         savings: parseFloat(savings),
+        rotated: hasOrientation,
       };
     } else {
       // Optimization didn't help, remove temp file
