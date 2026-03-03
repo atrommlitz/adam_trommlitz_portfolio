@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
-  transpilePackages: ["next-mdx-remote"],
   experimental: {
     mdxRs: false,
+    optimizePackageImports: ["@once-ui-system/core"],
+    turbopackFileSystemCacheForDev: true,
   },
   sassOptions: {
     compiler: "modern",
