@@ -26,7 +26,6 @@ export default function Home() {
         images={[
           person.avatar,
           "/images/projects/project-01/Mountains.jpg",
-          "/images/projects/project-01/Family_Picture.JPG",
         ]}
       />
 
@@ -126,11 +125,6 @@ export default function Home() {
         <HomeProjectCard
           images={[
             "/images/projects/project-01/Mountains.jpg",
-            "/images/projects/project-01/Family_Picture.JPG",
-            "/images/projects/project-01/Wetsuit.jpg",
-            "/images/projects/project-01/Canyon.JPG",
-            "/images/projects/project-01/Kings_Peak.jpg",
-            "/images/projects/project-01/Waterfall.JPG",
           ]}
           title="Personal Photos"
         />

@@ -2,7 +2,7 @@
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   experimental: {
-    mdxRs: false,
+    mdxRs: true,
     optimizePackageImports: ["@once-ui-system/core"],
     turbopackFileSystemCacheForDev: true,
   },
