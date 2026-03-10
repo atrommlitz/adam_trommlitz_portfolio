@@ -1,5 +1,6 @@
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote-client/rsc";
 import React, { ReactNode } from "react";
+import type { MDXRemoteProps } from "next-mdx-remote-client";
 
 import {
   Heading,
