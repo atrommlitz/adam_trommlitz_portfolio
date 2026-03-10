@@ -16,6 +16,10 @@ interface HomeProjectLinkProps {
 }
 
 export default function HomeProjectLink({ post }: HomeProjectLinkProps) {
+  if (!post || !post.metadata) {
+    return null;
+  }
+
   return (
     <SmartLink
       fillWidth
@@ -39,12 +43,14 @@ export default function HomeProjectLink({ post }: HomeProjectLinkProps) {
           vertical="center"
         >
           <Heading as="h2" variant="heading-strong-l" wrap="balance">
-            {post.metadata.title}
+            {post.metadata.title || "Untitled"}
           </Heading>
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            {formatDate(post.metadata.publishedAt, false)}
-          </Text>
-          {post.metadata.tag && (
+          {post.metadata.publishedAt && (
+            <Text variant="label-default-s" onBackground="neutral-weak">
+              {formatDate(post.metadata.publishedAt, false)}
+            </Text>
+          )}
+          {post.metadata.tag && typeof post.metadata.tag === 'string' && (
             <Tag
               className="mt-12"
               label={post.metadata.tag}
