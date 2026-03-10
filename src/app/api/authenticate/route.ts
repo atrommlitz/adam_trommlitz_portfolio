@@ -6,9 +6,10 @@ export async function POST(request: NextRequest) {
   const { password } = body;
   const correctPassword = process.env.PAGE_ACCESS_PASSWORD;
 
+  // If no password is configured, return error but don't crash
   if (!correctPassword) {
     console.error('PAGE_ACCESS_PASSWORD environment variable is not set');
-    return NextResponse.json({ message: "Internal server error" }, { status: 500 });
+    return NextResponse.json({ message: "Password protection not configured" }, { status: 503 });
   }
 
   if (password === correctPassword) {
