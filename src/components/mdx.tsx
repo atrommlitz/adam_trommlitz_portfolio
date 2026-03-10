@@ -1,6 +1,5 @@
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import React, { ReactNode } from "react";
-import type { MDXRemoteProps } from "next-mdx-remote-client";
 
 import {
   Heading,
@@ -214,7 +213,8 @@ const components = {
   SmartLink,
 };
 
-type CustomMDXProps = MDXRemoteProps & {
+type CustomMDXProps = {
+  source: string;
   components?: typeof components;
 };
 
