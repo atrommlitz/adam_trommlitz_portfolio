@@ -3,7 +3,6 @@ import React, { ReactNode } from "react";
 
 import {
   Heading,
-  HeadingLink,
   Text,
   InlineCode,
   CodeBlock,
@@ -90,7 +89,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
   const CustomHeading = ({
     children,
     ...props
-  }: Omit<React.ComponentProps<typeof HeadingLink>, "as" | "id">) => {
+  }: Omit<React.ComponentProps<typeof Heading>, "as" | "id">) => {
     // Extract text content from children (handles both string and ReactNode cases)
     const getTextContent = (node: ReactNode): string => {
       if (typeof node === "string") {
@@ -115,7 +114,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
     const slug = slugify(textContent || "");
 
     return (
-      <HeadingLink
+      <Heading
         marginTop="24"
         marginBottom="12"
         as={as}
@@ -123,7 +122,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
         {...props}
       >
         {children}
-      </HeadingLink>
+      </Heading>
     );
   };
 
