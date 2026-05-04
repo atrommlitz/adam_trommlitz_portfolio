@@ -41,6 +41,7 @@ export default function HomeProjectLink({ post }: HomeProjectLinkProps) {
           gap="4"
           padding="24"
           vertical="center"
+          style={{ background: "#000000", borderRadius: "var(--radius-l)" }}
         >
           <Heading as="h2" variant="heading-strong-l" wrap="balance">
             {post.metadata.title || "Untitled"}

@@ -1,4 +1,5 @@
 "use client";
+import { BackgroundStarfield } from "./BackgroundStarfield";
 
 import { useEffect, useState } from "react";
 import {
@@ -34,6 +35,7 @@ export default function BodyWrapper({ children, effects }: BodyWrapperProps) {
         padding="0"
         horizontal="center"
       >
+        <BackgroundStarfield />
         <Background
           position="fixed"
           mask={{
@@ -97,6 +99,7 @@ export default function BodyWrapper({ children, effects }: BodyWrapperProps) {
       padding="0"
       horizontal="center"
     >
+      <BackgroundStarfield />
       <Background
         position="fixed"
         mask={{

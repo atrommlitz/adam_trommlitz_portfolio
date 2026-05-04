@@ -24,3 +24,13 @@
     image-orientation: from-image;
     object-fit: contain;
 }
+
+.caption {
+    margin-top: var(--static-space-8);
+    padding: var(--static-space-12) var(--static-space-16);
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: var(--radius-m);
+    font-size: var(--font-size-label-default-s);
+    color: var(--neutral-on-background-weak);
+    line-height: 1.5;
+}

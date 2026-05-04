@@ -13,6 +13,11 @@ function GalleryImage({ image, index }: { image: typeof gallery.images[0]; index
         className={styles.image}
         loading={index < 10 ? "eager" : "lazy"}
       />
+      {image.description && (
+        <div className={styles.caption}>
+          {image.description}
+        </div>
+      )}
     </div>
   );
 }

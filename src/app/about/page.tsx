@@ -7,7 +7,6 @@ import {
   Icon,
   IconButton,
   Media,
-  Tag,
   Text,
   Meta,
   Schema,
@@ -73,58 +72,41 @@ export default function About() {
         }}
       />
       {about.tableOfContent.display && (
-        <Column
-          left="0"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
-          position="fixed"
-          paddingLeft="24"
-          gap="32"
-          hide="s"
-        >
-          <TableOfContents structure={structure} about={about} />
-        </Column>
+        <TableOfContents structure={structure} about={about} />
       )}
-      <Flex fillWidth horizontal="center">
+      <Column fillWidth horizontal="center" style={{ paddingLeft: "180px" }}>
+        {/* Avatar above name, centered */}
         {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            position="sticky"
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={language} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Flex>
-            )}
+          <Column fillWidth horizontal="center" paddingBottom="l" paddingTop="m">
+            <img
+              src={person.avatar}
+              alt={person.name}
+              style={{
+                width: "100%",
+                maxWidth: "480px",
+                height: "320px",
+                borderRadius: "var(--radius-l)",
+                objectFit: "cover",
+                objectPosition: "center top",
+                display: "block",
+              }}
+            />
           </Column>
         )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+        <Column fillWidth horizontal="center">
           <Column
             id={about.intro.title}
             fillWidth
             minHeight="160"
             vertical="center"
+            horizontal="center"
             marginBottom="32"
           >
-            <Heading className={styles.textAlign} variant="display-strong-xl">
+            <Heading style={{ textAlign: "center" }} variant="display-strong-xl">
               {person.name}
             </Heading>
             <Text
-              className={styles.textAlign}
+              style={{ textAlign: "center" }}
               variant="display-default-xs"
               onBackground="neutral-weak"
             >
@@ -442,7 +424,7 @@ export default function About() {
             </>
           )}
         </Column>
-      </Flex>
+      </Column>
     </Column>
   );
 }

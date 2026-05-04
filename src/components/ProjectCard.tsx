@@ -45,7 +45,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         </div>
       )}
-      <Flex fillWidth paddingX="s" paddingTop="12" paddingBottom="24" gap="l">
+      <Flex
+        fillWidth
+        paddingX="s"
+        paddingTop="12"
+        paddingBottom="24"
+        gap="l"
+        style={{ background: "#000000", borderRadius: "var(--radius-l)" }}
+      >
         {title && (
           <Flex flex={5}>
             <Heading as="h2" wrap="balance" variant="heading-strong-xl">
