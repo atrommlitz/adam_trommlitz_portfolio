@@ -3,7 +3,7 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   experimental: {
     mdxRs: false,
-    turbopackFileSystemCacheForDev: true,
+    turbopackFileSystemCacheForDev: false,
   },
   sassOptions: {
     compiler: "modern",
