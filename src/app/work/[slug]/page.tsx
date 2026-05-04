@@ -105,7 +105,11 @@ export default async function Project({
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>
       </Column>
 
-      <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
+      <Column
+        style={{ margin: "auto", background: "#000000", borderRadius: "var(--radius-l)", padding: "32px" }}
+        as="article"
+        maxWidth="xs"
+      >
         <Flex gap="12" marginBottom="24" vertical="center">
           {projectData[slugPath]?.team && (
             <AvatarGroup reverse avatars={avatars} size="m" />

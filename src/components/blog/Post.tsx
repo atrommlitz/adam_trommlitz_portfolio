@@ -27,14 +27,7 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
       key={post.slug}
       href={`/blog/${post.slug}`}
     >
-      <Flex
-        position="relative"
-        transition="micro-medium"
-        direction={direction}
-        radius="l"
-        className={styles.hover}
-        fillWidth
-      >
+      <div style={{ width: "100%", backgroundColor: "#000000", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column", border: "1px solid #ffffff" }}>
         {post.metadata.image && thumbnail && (
           <Media
             priority
@@ -69,7 +62,7 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
             />
           )}
         </Column>
-      </Flex>
+      </div>
     </SmartLink>
   );
 }

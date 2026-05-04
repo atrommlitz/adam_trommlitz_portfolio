@@ -100,18 +100,20 @@ export default function Home() {
 
       {/* Latest projects */}
       {routes["/work"] && (
-        <Column maxWidth="m" fillWidth gap="xl">
-          <Flex fillWidth gap="24">
-            <Flex flex={1} paddingLeft="l" paddingTop="24">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest projects
-              </Heading>
+        <RevealFx translateY="16" delay={0.6}>
+          <Column maxWidth="m" fillWidth gap="xl">
+            <Flex fillWidth gap="24">
+              <Flex flex={1} paddingLeft="l" paddingTop="24">
+                <Heading as="h2" variant="display-strong-xs" wrap="balance">
+                  Latest projects
+                </Heading>
+              </Flex>
+              <Flex flex={3} paddingX="20">
+                <HomeProjects range={[1, 2]} columns="2" />
+              </Flex>
             </Flex>
-            <Flex flex={3} paddingX="20">
-              <HomeProjects range={[1, 2]} columns="2" />
-            </Flex>
-          </Flex>
-        </Column>
+          </Column>
+        </RevealFx>
       )}
     </div>
   );

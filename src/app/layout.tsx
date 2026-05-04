@@ -46,9 +46,9 @@ export default async function RootLayout({
       )}
     >
       <head>
-        <link rel="icon" href="/favicon-new.ico?v=2" />
-        <link rel="apple-touch-icon" href="/favicon-new.ico?v=2" />
-        <meta name="msapplication-TileImage" content="/favicon-new.ico?v=2" />
+        <link rel="icon" href="/favicon-new.ico?v=4" />
+        <link rel="apple-touch-icon" href="/favicon-new.ico?v=4" />
+        <meta name="msapplication-TileImage" content="/favicon-new.ico?v=4" />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{

@@ -30,9 +30,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <Column fillWidth gap="m">
+    <div style={{ width: "100%", backgroundColor: "#000000", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column", gap: "16px", border: "1px solid #ffffff" }}>
       {images.length > 0 && (
-        <div style={{ width: "100%", overflow: "hidden", borderRadius: "8px" }}>
+        <div style={{ width: "100%", overflow: "hidden" }}>
           <img
             src={images[0]}
             alt={title}
@@ -45,14 +45,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         </div>
       )}
-      <Flex
-        fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
-        style={{ background: "#000000", borderRadius: "var(--radius-l)" }}
-      >
+      <div className="project-card-text">
         {title && (
           <Flex flex={5}>
             <Heading as="h2" wrap="balance" variant="heading-strong-xl">
@@ -96,7 +89,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Flex>
           </Column>
         )}
-      </Flex>
-    </Column>
+      </div>
+    </div>
   );
 };

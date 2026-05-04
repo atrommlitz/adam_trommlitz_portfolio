@@ -104,55 +104,45 @@ const about = {
         achievements: [
           <>
             Partnered with cross-functional teams to support product roadmap
-            development, conduct market research, and analyze customer feedback
-            to drive data-informed decisions for product improvements.
+            development, conduct market research, A/B testing, and analyze
+            customer feedback to drive data-informed decisions for product
+            improvements.
           </>,
           <>
             Built and presented a feature proposal to improve the canvas tagging
             experience based on user research using NotebookLM, competitor
             analysis, and customer journey maps, driving the product roadmap for
-            Q3 2025.
+            Q2 2026.
           </>,
           <>
-            Led team to 1st place in a company-wide hackathon, outperforming 67
-            teams, competing against VPs, directors, and managers.
+            Led team to 1st place in company hackathon, beating 67 teams,
+            competing against VPs, directors, and managers.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          // {
-          //   src: "/images/projects/project-01/cover-01.jpg",
-          //   alt: "Once UI Project",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
+        images: [],
       },
       {
-        company: "Sandbox",
-        timeframe: "April 2025 - Present",
-        role: "Product Manager",
+        company: "salus.ai (Sandbox)",
+        timeframe: "April 2025 - April 2026",
+        role: "AI Product Manager",
         achievements: [
           <>
-            Working with two engineers to develop and launch a startup while
-            leading product strategy, user research, and web development using
-            AI tools as part of a year-long venture-building experience.
+            Worked with an engineer to launch Salus.ai, an AI platform to
+            streamline operations for admissions coordinators in skilled nursing
+            facilities, saving four hours weekly from reviewing lengthy
+            documentation and manual data entry.
+          </>,
+          <>
+            Led product strategy, user research, and prototyping efforts to
+            validate our hypothesis and build a solution.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          // {
-          //   src: "/images/projects/project-01/cover-01.jpg",
-          //   alt: "Once UI Project",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
+        images: [],
       },
       {
         company: "Intermountain Health",
-        timeframe: "May 2024 - May 2025",
-        role: "Data Analyst Intern",
+        timeframe: "Apr 2024 - May 2025",
+        role: "Data Analyst / Scrum Master",
         achievements: [
           <>
             Collaborated with multiple stakeholders to effectively build and
@@ -162,16 +152,20 @@ const about = {
           <>
             Secured 3rd place in the Enterprise Tableau Data Visualization
             Competition with a team of three, presenting to an audience of over
-            100 people including analysts, directors, and managers using
+            100 people, including analysts, directors, and managers, using
             storytelling with data principles.
+          </>,
+          <>
+            Automated Excel tracking spreadsheet using SQL and a Tableau
+            Dashboard, saving managers 60 minutes weekly.
           </>,
         ],
         images: [],
       },
       {
         company: "Brigham Young University",
-        timeframe: "July 2021 - April 2024",
-        role: "Teacher and Training Supervisor",
+        timeframe: "Jul 2021 - Apr 2024",
+        role: "Training Supervisor",
         achievements: [
           <>
             Developed training meetings and instructional tools to build
@@ -180,12 +174,8 @@ const about = {
             team of 7.
           </>,
           <>
-            Implemented a system to organize students in conferencing calls,
-            resulting in a 50% reduction in student wait time.
-          </>,
-          <>
-            Achieved an average survey rating of 4.9/5.0 based on communication,
-            leadership, and employee satisfaction.
+            Achieved an average survey rating of 4.9/5.0 based on
+            communication, leadership, and employee satisfaction.
           </>,
         ],
         images: [],
@@ -200,8 +190,11 @@ const about = {
         name: "Brigham Young University - Marriott School of Business",
         description: (
           <>
-            Masters of Information Systems - Emphasis in Business Intelligence
-            and Data Analytics
+            Master's of Information Systems Management – Emphasis in Business
+            Analytics | GPA: 3.92/4.00 | Expected April 2026. Marriott School
+            Dean's List (Top 5%). Relevant courses: Product Management, Data
+            Analytics and Engineering, Organizational Behavior, AI and Agentic
+            Systems.
           </>
         ),
       },
@@ -215,7 +208,7 @@ const about = {
         title: "Languages",
         description: (
           <>
-            SQL (Advanced), Python (Proficient), HTML/CSS (Proficient), R
+            SQL (Advanced), Python (Proficient), Javascript (Proficient), R
             (Proficient)
           </>
         ),
@@ -240,8 +233,8 @@ const about = {
         description: (
           <>
             MySQL, PostgreSQL, Pandas, Sklearn, Informatica, AWS (EC2, Elastic
-            Beanstalk, RDS, S3), Azure (SQL Database, Key Vault, Compute),
-            Linux, Databricks,{" "}
+            Beanstalk, RDS, S3, Bedrock), Azure (SQL Database, Key Vault,
+            Compute), Linux, Databricks,{" "}
             <a
               href="https://public.tableau.com/app/profile/adam.trommlitz/vizzes"
               target="_blank"
@@ -306,7 +299,7 @@ const about = {
         ],
       },
       {
-        organization: "BYUSA - Student Leadership Center",
+        organization: "BYUSA - Student Advisory Council",
         timeframe: "May 2024 - May 2025",
         role: "Team Lead",
         achievements: [
@@ -363,129 +356,129 @@ const gallery = {
   images: [
     {
       src: "/images/gallery/IMG_0166.JPG",
-      alt: "Scenic landscape photography",
+      alt: "Snowshoeing at Tibble Fork",
       orientation: "horizontal",
-      description: "Add a description here",
+      description: "Snowshoeing at Tibble Fork",
     },
     {
       src: "/images/gallery/IMG_0177.JPG",
-      alt: "Outdoor adventure photography",
+      alt: "Snowshoeing in the Wasatch Mountains",
       orientation: "horizontal",
-      description: "Add a description here",
+      description: "Snowshoeing in the Wasatch Mountains",
     },
     {
       src: "/images/gallery/IMG_1119.JPG",
-      alt: "Nature photography",
+      alt: "Hiking in Muir Woods",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Hiking in Muir Woods",
     },
     {
       src: "/images/gallery/IMG_3745.jpg",
-      alt: "Landscape photography",
+      alt: "Hiking in Kolob Canyon, Zion National Park",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Hiking in Kolob Canyon, Zion National Park",
     },
     {
       src: "/images/gallery/IMG_1107.JPG",
-      alt: "Outdoor landscape photography",
+      alt: "Going down the S-curve in San Francisco",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Going down the S-curve in San Francisco",
     },
     {
       src: "/images/gallery/IMG_1097.JPG",
-      alt: "Nature scene photography",
+      alt: "Rock climbing with friends",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Rock climbing with friends",
     },
     {
       src: "/images/gallery/IMG_0886.JPG",
-      alt: "Scenic view photography",
+      alt: "Visiting Bryce Canyon hoodoos",
       orientation: "horizontal",
-      description: "Add a description here",
+      description: "Visiting Bryce Canyon hoodoos",
     },
     {
       src: "/images/gallery/IMG_0865.JPG",
-      alt: "Landscape vista photography",
+      alt: "Buffalo steak at Hell's Backbone Bar and Grill",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Buffalo steak at Hell's Backbone Bar and Grill",
     },
     {
       src: "/images/gallery/IMG_0678.JPG",
-      alt: "Outdoor scene photography",
+      alt: "Backpacking in the Uintas",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Backpacking in the Uintas",
     },
     {
       src: "/images/gallery/IMG_0576.JPG",
-      alt: "Nature landscape photography",
+      alt: "Hiking at Stuart Falls",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Hiking at Stuart Falls",
     },
     {
       src: "/images/gallery/IMG_0541.JPG",
-      alt: "Scenic outdoor photography",
+      alt: "Golfing in Payson",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Golfing in Payson",
     },
     {
       src: "/images/gallery/IMG_0172.JPG",
-      alt: "Portrait photography",
+      alt: "Lower Calf Creek Falls",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Lower Calf Creek Falls",
     },
     {
       src: "/images/gallery/IMG_0290.JPG",
-      alt: "Urban photography",
+      alt: "Hell's Backbone",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Hell's Backbone",
     },
     {
       src: "/images/gallery/IMG_0317.JPG",
-      alt: "Street photography",
+      alt: "Bryce Canyon hike",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Bryce Canyon hike",
     },
     {
       src: "/images/gallery/IMG_4265.JPG",
-      alt: "Cityscape photography",
+      alt: "Kings Peak River",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Kings Peak River",
     },
     {
       src: "/images/gallery/IMG_5304.JPG",
-      alt: "Architecture photography",
+      alt: "Kings Peak Valley",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Kings Peak Valley",
     },
     {
       src: "/images/gallery/IMG_5306.JPG",
-      alt: "Urban exploration photography",
+      alt: "King's Peak hiking with friends",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "King's Peak hiking with friends",
     },
     {
       src: "/images/gallery/IMG_4045.jpg",
-      alt: "Portrait photography",
+      alt: "Angel's Landing",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Angel's Landing",
     },
     {
       src: "/images/gallery/IMG_0682.jpg",
-      alt: "Portrait photography",
+      alt: "Backpacking in the Windows at a lake",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Backpacking in the Windows at a lake",
     },
     {
       src: "/images/gallery/IMG_8582.JPG",
-      alt: "Portrait photography",
+      alt: "Stargazing in Escalante — a certified dark sky park",
       orientation: "vertical",
-      description: "Add a description here",
+      description: "Stargazing in Escalante — a certified dark sky park",
     },
     {
       src: "/images/gallery/IMG_1246.jpg",
-      alt: "Landscape photography",
+      alt: "Rappelling in Spanish Fork",
       orientation: "horizontal",
-      description: "Add a description here",
+      description: "Rappelling in Spanish Fork",
     },
   ],
 };

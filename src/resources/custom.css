@@ -1,3 +1,12 @@
+.project-card-text {
+  background: #000000 !important;
+  border-radius: 12px;
+  padding: 16px 16px 24px 16px;
+  width: 100%;
+  display: flex;
+  gap: 24px;
+}
+
 /* :root {
   /*
   /* Example setup for custom colors */
