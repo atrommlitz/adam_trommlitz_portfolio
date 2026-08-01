@@ -45,7 +45,7 @@
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "eslint": "^9.25.0",
-    "sharp": "^0.33.5",
+    "sharp": "^0.35.3",
     "typescript": "^5.8.3"
   }
 }
