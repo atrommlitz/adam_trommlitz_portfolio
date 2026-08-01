@@ -1,6 +1,10 @@
 {
   "name": "@once-ui-system/magic-portfolio",
   "version": "2.2.0",
+  "packageManager": "npm@11.11.0",
+  "engines": {
+    "node": ">=24.14.1 <25"
+  },
   "scripts": {
     "dev": "next dev --turbopack -p 3005",
     "export": "next export",
@@ -18,12 +22,13 @@
     "dom-helpers": "^6.0.1",
     "esprima": "^4.0.1",
     "exifr": "^7.1.3",
+    "geist": "^1.7.2",
     "gray-matter": "^4.0.3",
     "mdast-util-to-hast": "^12.3.0",
     "micromark": "^3.2.0",
     "micromark-core-commonmark": "^2.0.3",
     "micromark-extension-gfm": "^2.0.3",
-    "next": "^16.2.0-canary.72",
+    "next": "^16.2.12",
     "next-mdx-remote-client": "^2.1.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",

@@ -23,40 +23,8 @@ const protectedRoutes = {
   // No protected routes currently
 };
 
-// Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
-
-const heading = Geist_Mono({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const body = Geist_Mono({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const label = Geist_Mono({
-  variable: "--font-label",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const code = Geist_Mono({
-  variable: "--font-code",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fonts = {
-  heading: heading,
-  body: body,
-  label: label,
-  code: code,
-};
+// Fonts are loaded in src/app/layout.tsx via the self-hosted `geist` package.
+// next/font loaders must live in the app graph, not in this config module.
 
 // default customization applied to the HTML in the main layout.tsx
 const style = {
@@ -193,7 +161,6 @@ export {
   routes,
   protectedRoutes,
   baseURL,
-  fonts,
   style,
   schema,
   sameAs,

@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
-  experimental: {
-    mdxRs: false,
-    turbopackFileSystemCacheForDev: false,
-  },
   sassOptions: {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],

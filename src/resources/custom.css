@@ -1,3 +1,12 @@
+/* Map Once UI's font variables onto the self-hosted Geist Mono loaded in
+   once-ui.config.js via the `geist` package. */
+:root {
+  --font-heading: var(--font-geist-mono);
+  --font-body: var(--font-geist-mono);
+  --font-label: var(--font-geist-mono);
+  --font-code: var(--font-geist-mono);
+}
+
 .project-card-text {
   background: #000000 !important;
   border-radius: 12px;

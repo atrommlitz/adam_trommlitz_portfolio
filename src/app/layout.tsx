@@ -14,7 +14,10 @@ import {
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+import { baseURL, effects, style, dataStyle, home } from "@/resources";
+// Self-hosted Geist Mono — no compile-time download, unlike next/font/google.
+// custom.css maps --font-heading/body/label/code onto --font-geist-mono.
+import { GeistMono } from "geist/font/mono";
 import BodyWrapper from "@/components/BodyWrapper";
 
 export async function generateMetadata() {
@@ -38,12 +41,7 @@ export default async function RootLayout({
       as="html"
       lang="en"
       fillWidth
-      className={classNames(
-        fonts.heading.variable,
-        fonts.body.variable,
-        fonts.label.variable,
-        fonts.code.variable
-      )}
+      className={classNames(GeistMono.variable)}
     >
       <head>
         <link rel="icon" href="/favicon-new.ico?v=4" />
