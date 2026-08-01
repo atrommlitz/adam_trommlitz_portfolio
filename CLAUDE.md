@@ -12,7 +12,45 @@ npm run lint         # Run ESLint
 npm run optimize-images  # Run image optimization script
 ```
 
-There are no tests in this project.
+There are no tests in this project. `npm run build` is the real check — it
+catches failures the dev server tolerates silently.
+
+## Returning after time away
+
+This repo is worked on in bursts, and long gaps are where breakage comes from.
+Start every session back with:
+
+```bash
+nvm use        # pins Node to .nvmrc (24.14.1); the native @next/swc binary is version-sensitive
+npm ci         # NOT `npm install` — installs the lockfile exactly and wipes node_modules first
+npm run build  # verify a clean build before changing anything
+```
+
+Use **npm**, not pnpm or yarn. It is pinned via `packageManager` in
+`package.json` and is the manager the committed `package-lock.json` belongs to.
+
+`npm install` is what lets a tree drift or half-corrupt between visits; `npm ci`
+is deterministic. If something behaves strangely, `rm -rf node_modules .next &&
+npm ci` before debugging anything else.
+
+### Known failure mode: a dev server that hangs with no error
+
+`next dev` printing `✓ Ready` and then stalling — no error, just a spinner — has
+happened here before. Triage in this order:
+
+1. `tail .next/dev/logs/next-development.log` — Next logs `○ Compiling X ...`
+   here even when the terminal shows nothing.
+2. `ps -o %cpu -p <pid>` — **low CPU means blocked on I/O** (a network call or
+   lock), not slow compilation. This is the highest-signal check.
+3. `curl localhost:3005/robots.txt` — if a trivial route hangs too, the problem
+   is global, not in the page you are editing.
+
+Root cause last time: `next/font/google` downloading fonts *at compile time*.
+Fonts are now self-hosted via the `geist` package, loaded in
+`src/app/layout.tsx`. **Do not move `next/font` loaders into
+`src/resources/once-ui.config.js`** — it works in dev and fails the production
+build with `ReferenceError`. Avoid adding anything that fetches over the network
+during a build.
 
 ## Architecture
 
@@ -21,11 +59,12 @@ This is a **Next.js 16 (App Router)** portfolio site built on the [Magic Portfol
 ### Key config files (the primary place to make changes)
 
 - **`src/resources/content.js`** — All personal content: bio, work experience, education, social links, gallery images, page text. This is JSX-enabled (uses React fragments for rich text).
-- **`src/resources/once-ui.config.js`** — Site-wide settings: theme, colors, typography (Geist fonts), visual effects (dots, gradients, masks), enabled routes, password-protected routes, and `baseURL` for SEO/OG tags.
+- **`src/resources/once-ui.config.js`** — Site-wide settings: theme, colors, visual effects (dots, gradients, masks), enabled routes, password-protected routes, and `baseURL` for SEO/OG tags. Fonts are **not** here — see `src/app/layout.tsx`.
 - **`src/resources/custom.css`** — Custom CSS overrides on top of Once UI tokens.
 - **`src/resources/icons.ts`** — Custom icon registry for social/nav icons.
 
 ### Content authoring
+
 
 - **Blog posts**: Add `.mdx` files to `src/app/blog/posts/`
 - **Work/projects**: Add `.mdx` files to `src/app/work/projects/`
