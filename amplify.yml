@@ -15,6 +15,11 @@ frontend:
     files:
       - "**/*"
   cache:
+    # Cache npm's download cache, NOT node_modules. `npm ci` deliberately wipes
+    # node_modules and rebuilds from the lockfile; restoring a cached copy on
+    # top of that can leave a half-merged tree (we hit exactly that: a package
+    # present but missing its entry file). $HOME/.npm keeps builds fast without
+    # undermining that guarantee.
     paths:
-      - node_modules/**/*
+      - $HOME/.npm/**/*
       - .next/cache/**/*
