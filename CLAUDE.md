@@ -52,6 +52,28 @@ Fonts are now self-hosted via the `geist` package, loaded in
 build with `ReferenceError`. Avoid adding anything that fetches over the network
 during a build.
 
+## Deployment — two targets, both live
+
+Pushing to `main` deploys to **both** platforms. This is deliberate:
+
+- **Vercel** — primary hosting, via the GitHub integration. Also builds a
+  preview deployment for every PR, which is a useful safety net.
+- **AWS Amplify** — serves the **custom domain**, configured by `amplify.yml`.
+
+**Do not delete `amplify.yml`.** It looks like leftover config from a migration,
+but it is live and the domain depends on it. (This has already been mistaken for
+dead config once.)
+
+Both run `npm ci && npm run build`, so a green local build is a good predictor
+of both. A failed build on either platform does **not** take the site down —
+each keeps serving its last successful deployment.
+
+A third check, GitHub Actions (`.github/workflows/ci.yml`), is separate from
+both and does not deploy anything; it only reports pass/fail.
+
+Amplify caches `$HOME/.npm`, not `node_modules` — caching `node_modules` fights
+`npm ci`, which wipes it by design, and can leave a half-installed tree.
+
 ## Architecture
 
 This is a **Next.js 16 (App Router)** portfolio site built on the [Magic Portfolio](https://github.com/once-ui-system/magic-portfolio) template using the **Once UI** component system (`@once-ui-system/core`).
