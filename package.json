@@ -41,11 +41,11 @@
   },
   "devDependencies": {
     "@types/cookie": "^0.6.0",
-    "@types/node": "^26.1.2",
+    "@types/node": "^26.4.0",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "eslint": "^9.25.0",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "typescript": "^5.8.3"
   }
 }
