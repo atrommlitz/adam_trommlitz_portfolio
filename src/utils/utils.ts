@@ -44,10 +44,18 @@ function readMDXFile(filePath: string) {
   // Filter out images and links from the content for blog posts
   let filteredContent = content;
 
+  // Work projects render their MDX as authored - inline images and clickable
+  // links included. Only blog posts get stripped down to text.
+  const isWorkProject = path
+    .dirname(filePath)
+    .endsWith(path.join("work", "projects"));
+
   // For the index post, preserve images but still filter links
   if (fileName === "index") {
     // Keep images but remove links
     filteredContent = filteredContent.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+  } else if (isWorkProject) {
+    // Leave the content untouched.
   } else {
     // Remove ALL markdown images completely for other posts
     filteredContent = filteredContent.replace(/!\[.*?\]\([^)]*\)/g, "");

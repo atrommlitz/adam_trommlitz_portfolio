@@ -9,6 +9,17 @@ export interface ProjectData {
 }
 
 export const projectData: Record<string, ProjectData> = {
+  "salus-ai": {
+    images: ["/images/work/Salus_AI.png"],
+    team: [
+      {
+        name: "Adam Trommlitz",
+        role: "AI Product Manager",
+        avatar: "/images/adam_photo.jpg",
+        linkedIn: "https://www.linkedin.com/in/adamtrommlitz/",
+      },
+    ],
+  },
   "is-talent-portfolio": {
     images: ["/images/work/IS_Talent_Portfiolio.png"],
     team: [

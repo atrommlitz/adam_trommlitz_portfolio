@@ -1,0 +1,95 @@
+---
+title: "Sandbox Startup - salus.ai"
+publishedAt: "2026-04-01"
+summary: "Co-founded an AI admissions platform for skilled nursing facilities through BYU's Sandbox program, turning ~3 hours of referral paperwork into ~30 minutes of review."
+---
+
+## Summary
+
+**salus.ai** is an AI admissions assistant for skilled nursing facilities (SNFs), built over a year through BYU's Sandbox startup program.
+
+- **The problem** — Every SNF admission starts with a 50 to 200 page referral packet. Coordinators spend 5–10+ hours a week reading them, re-typing the data into PointClickCare, and filling out state forms by hand.
+- **The solution** — Ingest the packet automatically, extract the fields that matter, push them into the EMR, and let coordinators ask questions about a specific patient instead of digging through notes. Roughly 3 hours of paperwork becomes about 30 minutes of review.
+- **My role** — AI Product Manager. I led product strategy, user research, and prototyping alongside one engineer.
+- **Validation** — Dozens of interviews and in-person shadowing sessions across 15+ Utah facilities shaped every product decision, including which EMR and which state to build for first.
+- **Where it landed** — A working MVP, a full HIPAA compliance package (BAA, Privacy Policy, Terms of Service), and early beta partners lined up against a roughly $154M market opportunity.
+
+[Watch a demo of the software](https://drive.google.com/file/d/1-uXEiiAeUcvs7hhCxjhN5fa9UDiPvfVA/view?usp=sharing)
+
+[Watch the Demo Day presentation](https://drive.google.com/file/d/1939qEVDgHEXS6YYhkxjPuI9-wBSRI_Dp/view?usp=sharing)
+
+![Salus.ai overview - document automation for admissions coordinators, with a $154M market opportunity](/images/work/Salus_AI_Overview.jpg)
+
+## The Problem
+
+Every time a hospital discharges a patient to a Skilled Nursing Facility (SNF), the Admissions Coordinator receives a referral packet — often 50 to 200 pages of medical history, diagnoses, medications, insurance details, discharge plans, and nursing/PT/OT notes.
+
+To bring that patient in, the coordinator has to:
+
+- Read through the entire packet to find the handful of data points that actually matter
+- Manually re-type all of that information into the facility's EMR (we focused on PointClickCare, or "PCC," since it's the dominant system among the SNFs we researched)
+- Fill out state-specific admissions paperwork by hand (we started with Utah's forms)
+- Call or email insurance companies to secure authorization
+- Coordinate transportation to physically pick the patient up once approved
+
+Through dozens of conversations and in-person shadowing sessions with admissions coordinators and MDS nurses across Utah facilities — including Rocky Mountain Care, Draper Rehab, Copper Ridge, Cascades at Orchard Park, and others — we consistently heard the same story: this process eats up 5–10+ hours a week per coordinator, is highly error-prone, and pulls skilled staff away from the parts of their job that actually matter — patient relationships and helping families through a stressful transition.
+
+The stakes are only rising. By 2030, roughly 1 in 5 Americans will be over 65, and a large share of that group will need short- or long-term skilled care. SNFs are going to be under growing pressure to process admissions faster without sacrificing accuracy.
+
+## Why It Matters
+
+Beyond the time drain, the manual process creates real financial and operational risk:
+
+- **Errors in data entry** can delay admissions or cause downstream billing/reimbursement problems tied to MDS and PDPM (Patient-Driven Payment Model) coding
+- **Slow authorization turnaround** with insurers (often United Healthcare/Optum, Medicare, or Medicaid) can stall a bed from being filled
+- **Coordinator burnout** — the role blends clinical judgment, sales/relationship-building, and rote paperwork, and the paperwork consistently crowds out everything else
+- At roughly $50,000/year per coordinator, the hours lost to manual entry translate into thousands of dollars in labor cost per facility, per year
+
+## The Solution
+
+We set out to build a unified **Admissions Assistant Platform** purpose-built for SNF admissions coordinators, with the following core capabilities:
+
+1. **Automated Intake** — Ingest referral packets in whatever form they arrive (PDF, fax, CCD/CCD-A) and extract the structured data a coordinator actually needs.
+2. **EMR Auto-Population** — Push that extracted data directly into PointClickCare to create or update a patient's profile, eliminating manual re-entry.
+3. **Patient-Specific AI Chatbot** — Store the original referral packet alongside the patient's profile and let the coordinator ask natural-language questions about that specific patient (medications, behaviors, insurance status) instead of digging through pages of notes. The AI's knowledge is deliberately scoped to that one patient's documents only — it does not draw on general medical knowledge or other patients' data.
+4. **Form Auto-Fill** — Pre-populate the Utah SNF admissions packet (and eventually other state forms) so the nurse only has to review, edit, and sign rather than fill everything out from scratch.
+5. **Transportation Coordination** — Once a patient is approved, automatically pull the relevant details and help schedule and communicate with drivers for pickup.
+
+We deliberately scoped the first version tightly: PointClickCare-only integration, Utah-only forms, and a narrow set of workflows — rather than trying to be everything at once, the way some larger competitors (ExaCare AI, Flax.ai, Mediform AI, Clinware, among others) do for enterprise multi-facility chains.
+
+## What We Built
+
+**Customer discovery.** We conducted dozens of outreach calls and in-person shadowing sessions with admissions coordinators, MDS nurses, and facility administrators across more than 15 SNFs in Utah (and additional interviews with facilities in California), mapping the full admissions workflow from referral to first-week checklist. This research shaped every product decision — including confirming PCC as the right first EMR to integrate with, and Utah as the right first state for form automation.
+
+**Product / MVP.** We built a working prototype that:
+
+- Creates a patient profile directly from an uploaded referral packet
+- Lets a coordinator query that packet with AI to surface specific information (medications, insurance status, behaviors, therapy needs) instead of manually scanning documents
+- Pushes structured patient data into PointClickCare
+- Includes an early dashboard view (census, room occupancy, discharges, flagged concerns like high-risk medications or insurance issues, daily summary of who's arriving/leaving)
+
+We iterated on this prototype based on direct facility feedback — adding features like critical-concern flags, a daily snapshot view, activity logs, and stronger human-in-the-loop review before anything gets pushed to PCC.
+
+**Compliance and legal groundwork.** Because the product handles Protected Health Information, we treated HIPAA compliance as foundational rather than an afterthought. We drafted:
+
+- A full **Business Associate Agreement (BAA)** template outlining permitted uses of PHI, required safeguards (encryption in transit and at rest, access controls, audit logging), and breach notification procedures
+- A **Privacy Policy** and **Terms of Service** covering data ownership (the SNF retains all rights to patient data), the context-limited AI chatbot, and EMR integration responsibilities
+- A security framework covering role-based access, encryption, multi-factor authentication, audit logging, and a risk analysis and incident response process
+
+**Market and competitive research.** We benchmarked ourselves against both admissions-focused competitors (ExaCare AI, Flax.ai, Mediform AI, Clinware, Aidin, Conduit) and adjacent MDS/PDPM tools (Oler, PreciseMDS, DolphinCare, Nanonets.health), identifying a clear gap: most existing tools are either too complex and expensive for small-to-mid-size SNFs, or don't integrate deeply enough with PCC and state-specific paperwork. We positioned around simplicity, transparent pricing, and being purpose-built for individual or small multi-facility SNFs rather than large enterprise chains.
+
+**Go-to-market.** We built a full GTM strategy targeting Admissions Coordinators (users) and Administrators/CFOs (budget holders) at PCC-based Utah SNFs, with a value proposition centered on turning ~3 hours of paperwork into ~30 minutes of review. We ran direct outreach (cold email, LinkedIn, in-person visits), refined a sales pitch (validated around a flat, transparent monthly fee rather than per-user pricing), and secured early interest from admissions coordinators willing to beta test the product once HIPAA compliance was finalized.
+
+## Traction
+
+![Presenting Salus.ai on stage at the Sandbox Demo Day](/images/work/Salus_Demo_Day.jpg)
+
+- Built and iterated on a working MVP based on direct facility feedback
+- Conducted structured discovery with 15+ Utah SNFs and additional out-of-state interviews
+- Drafted the full compliance package (BAA, Privacy Policy, Terms of Service) needed to operate with real patient data
+- Identified and lined up early beta partners among admissions coordinators, pending HIPAA compliance completion
+- Sized the opportunity at roughly $154M (based on ~16,000 SNFs nationally at an estimated $800/month/facility)
+
+## What's Next
+
+The immediate roadmap includes finishing HIPAA compliance, formalizing the PointClickCare developer partnership, launching the beta with early design-partner facilities, and expanding beyond Utah's admissions forms to additional states.

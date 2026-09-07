@@ -32,13 +32,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div style={{ width: "100%", backgroundColor: "#000000", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column", gap: "16px", border: "1px solid #ffffff" }}>
       {images.length > 0 && (
-        <div style={{ width: "100%", overflow: "hidden" }}>
+        <div
+          style={{
+            width: "100%",
+            aspectRatio: "16 / 9",
+            overflow: "hidden",
+          }}
+        >
           <img
             src={images[0]}
             alt={title}
             style={{
               width: "100%",
-              height: "auto",
+              height: "100%",
               display: "block",
               objectFit: "contain",
             }}
