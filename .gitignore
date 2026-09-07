@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# claude code local settings (per-machine; the glob also catches iCloud
+# duplicates like "settings.local 2.json")
+.claude/settings.local.json
+.claude/settings.local *.json
